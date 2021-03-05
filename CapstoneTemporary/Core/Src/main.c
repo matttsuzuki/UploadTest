@@ -5,12 +5,16 @@
 #include "gpio.h"
 #include "lcd.h"
 #include "graphic.h"
-
+#include "screens.h"
 
 
 void SystemClock_Config(void);
+void initializeGPIONVIC(void);
+
+int view_index = 0;
 
 extern uint8_t *GRAM;
+
 
 int main(void)
 {
@@ -21,144 +25,15 @@ int main(void)
   LCD_LtdcInit();
   LCD_DispInit_Spi();
   LCD_DispInit_Ltdc();
+  initializeGPIONVIC();
 
-//  BSP_LED_Init(LED3);
-  //BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_GPIO);	//added
+  InitialScreen();
+  MenuScreen();
 
-  int x = 50;
-  //horizontal speed
-  int v = 1;
   while (1)
   {
-//	  LCD_SetColorLtdc(0x2c);
-//	  LCD_DrawRect_Ltdc(10, 10, 50, 50);
-//
-	  LCD_SetColorLtdc(0x16);
-//	  LCD_DrawRect_Ltdc(10, 70, 50, 120);
-//
-//	  LCD_SetColorLtdc(0x2a);
-//	  LCD_DrawRect_Ltdc(10, 130, 50, 180);
-//
-//	  LCD_SetColorLtdc(0xff);
-//	  if (BSP_PB_GetState(BUTTON_KEY) == 1) {
 
-//Prints 'HELLO' and moves
-//	  LCD_DrawHBig(x, 100);
-//	  x = (x + 18) % LCD_WIDTH;
-//	  LCD_DrawEBig(x, 100);
-//	  x = (x + 18) % LCD_WIDTH;
-//	  LCD_DrawLBig(x, 100);
-//	  x = (x + 18) % LCD_WIDTH;
-//	  LCD_DrawLBig(x, 100);
-//	  x = (x + 18) % LCD_WIDTH;
-//	  LCD_DrawOBig(x, 100);
-
-//	  	  HAL_Delay(500);
-//	  	  LCD_ClearScreenLtdc();
-//	  	  x = (x + v) % LCD_WIDTH;
-
-	  //Initialize
-	  LCD_DrawHBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawEBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawLBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawLBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawOBig(x, 100);
-	  HAL_Delay(2000);
-	  LCD_ClearScreenLtdc();
-	  HAL_Delay(2000);
-	  x = 50;
-	  //main menu
-	  LCD_DrawMBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawEBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawNBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawUBig(x,100);
-	  HAL_Delay(2000);
-	  x = 50;
-	  LCD_ClearScreenLtdc();
-	  //bluetooth
-	  LCD_DrawBBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawLBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawUBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawEBig(x,100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawTBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawOBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawOBig(x,100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawTBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawHBig(x,100);
-	  x = (x + 18) % LCD_WIDTH;
-	  HAL_Delay(2000);
-	  x = 50;
-	  LCD_ClearScreenLtdc();
-	  //Schedule
-	  LCD_DrawSBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawCBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawHBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawEBig(x,100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawDBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawUBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawLBig(x,100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawEBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-
-	  HAL_Delay(2000);
-	  x = 50;
-	  LCD_ClearScreenLtdc();
-	  //Dispensed
-	  LCD_DrawDBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawIBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawSBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawPBig(x,100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawEBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawNBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawSBig(x,100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawEBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  LCD_DrawDBig(x, 100);
-	  x = (x + 18) % LCD_WIDTH;
-	  HAL_Delay(2000);
-	  x = 50;
   }
-//	  LCD_SetColorLtdc(0x15);
-//	  LCD_DrawRect_Ltdc(10, 10, 50, 50);
-//
-//	  LCD_SetColorLtdc(0x2b);
-//	  LCD_DrawRect_Ltdc(10, 70, 50, 120);
-//
-//	  LCD_SetColorLtdc(0x20);
-//	  LCD_DrawRect_Ltdc(10, 130, 50, 180);
-//
-//	  LCD_SetColorLtdc(0xff);
-//	  	  LCD_DrawH(x, 200);
-//	  HAL_Delay(1000);
 }
 
 void SystemClock_Config(void)
@@ -228,4 +103,37 @@ void assert_failed(uint8_t *file, uint32_t line)
 }
 #endif
 
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+// initialize GPIO, NVIC
+void initializeGPIONVIC(void)
+{
+	GPIO_InitTypeDef GPIO_InitStruct = {0};
+	GPIO_InitStruct.Pin = GPIO_PIN_0;
+	GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+	HAL_NVIC_SetPriority(EXTI0_IRQn, 3, 0);
+	HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+}
+
+// EXIT0 handler
+void EXTI0_IRQHandler(void)
+{
+	if (view_index == 0)
+	{
+		BluetoothScreen();
+	}
+	else if (view_index == 1)
+	{
+		ScheduleScreen();
+	}
+	else if (view_index == 2)
+	{
+		DispensedScreen();
+	}
+	else if (view_index == 3)
+	{
+		MenuScreen();
+	}
+	view_index = (view_index + 1) % 4;
+	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
+}

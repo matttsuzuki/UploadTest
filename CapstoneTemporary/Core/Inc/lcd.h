@@ -36,6 +36,7 @@ void LCD_WriteCommand(uint8_t data);
 void LCD_WriteData(uint8_t data);
 void LCD_WriteBulkData(uint8_t *data, uint8_t size);
 void LCD_WriteGRAM(uint8_t data, uint32_t addr);
-void LCD_ClearScreenLtdc();
+void LCD_ClearScreenLtdc(uint8_t c);
+
 
 #endif /* LCD_H_ */

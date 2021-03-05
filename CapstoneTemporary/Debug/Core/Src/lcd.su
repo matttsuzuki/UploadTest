@@ -8,4 +8,4 @@ lcd.c:343:6:LCD_WriteCommand	16	static
 lcd.c:351:6:LCD_WriteData	16	static
 lcd.c:359:6:LCD_WriteBulkData	16	static
 lcd.c:367:6:LCD_WriteGRAM	16	static
-lcd.c:373:6:LCD_ClearScreenLtdc	8	static
+lcd.c:373:6:LCD_ClearScreenLtdc	16	static

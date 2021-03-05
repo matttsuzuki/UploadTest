@@ -370,6 +370,6 @@ void LCD_WriteGRAM(uint8_t data, uint32_t addr) {
 	GRAM[addr] = data;
 }
 
-void LCD_ClearScreenLtdc() {
-	memset(GRAM, 0x2a, LCD_WIDTH * LCD_HEIGHT);
+void LCD_ClearScreenLtdc(uint8_t c) {
+	memset(GRAM, c, LCD_WIDTH * LCD_HEIGHT);
 }

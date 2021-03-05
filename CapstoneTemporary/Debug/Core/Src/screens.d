@@ -1,4 +1,4 @@
-Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
+Core/Src/screens.o: ../Core/Src/screens.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -27,9 +27,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
- ../Core/Inc/ltdc.h ../Core/Inc/main.h ../Core/Inc/spi.h \
- ../Core/Inc/gpio.h ../Core/Inc/lcd.h ../Core/Inc/graphic.h \
- ../Core/Inc/screens.h
+ ../Core/Inc/graphic.h ../Core/Inc/lcd.h
 
 ../Core/Inc/main.h:
 
@@ -89,16 +87,6 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
 
-../Core/Inc/ltdc.h:
-
-../Core/Inc/main.h:
-
-../Core/Inc/spi.h:
-
-../Core/Inc/gpio.h:
-
-../Core/Inc/lcd.h:
-
 ../Core/Inc/graphic.h:
 
-../Core/Inc/screens.h:
+../Core/Inc/lcd.h:

@@ -1,0 +1,5 @@
+screens.c:12:6:InitialScreen	16	static
+screens.c:33:6:MenuScreen	16	static
+screens.c:46:6:BluetoothScreen	16	static
+screens.c:84:6:ScheduleScreen	16	static
+screens.c:106:6:DispensedScreen	16	static
