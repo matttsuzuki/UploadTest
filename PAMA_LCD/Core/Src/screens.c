@@ -116,13 +116,23 @@ void letterselect(const char letter, int x, int y){
 	else if( letter == '8' ) {
 		LCD_Draw8Big(x, y);
 	}
-	else {
+	else if( letter == '9') {
 		LCD_Draw9Big(x, y);
+	}
+	else if( letter == ' ') {
 	}
 }
 
 void type(char const * word, int x, int y){
 	for (int i = 0; i < strlen(word); i++){
+		if ( x >= 224 ){
+			x = 0;
+			y = y + 18;
+		}
+		if ( y >= 304 ){
+			y = 0;
+			x = 0;
+		}
 		letterselect(word[i], x, y);
 		x = (x + 18) % LCD_WIDTH;
 	}
@@ -142,8 +152,8 @@ void InitialScreen(void)
 void MenuScreen(void)
 {
 	LCD_ClearScreenLtdc(0x04);
-	type("MENU", 70, 152);
-	type("PAMA" , 85, 294);
+	type("MENU LALILULELO", 70, 152);
+	type("PAMA LALILULELO" , 85, 294);
 }
 
 void BluetoothScreen(void)
