@@ -12,112 +12,118 @@
 
 void letterselect(const char letter, int x, int y){
 	if( letter == 'A' ) {
-		LCD_DrawABig(x, y);
+		LCD_A(x, y);
 	}
 	else if( letter == 'B' ) {
-		LCD_DrawBBig(x, y);
+		LCD_B(x, y);
 	}
 	else if( letter == 'C' ) {
-		LCD_DrawCBig(x, y);
+		LCD_C(x, y);
 	}
 	else if( letter == 'D' ) {
-		LCD_DrawDBig(x, y);
+		LCD_D(x, y);
 	}
 	else if( letter == 'E' ) {
-		LCD_DrawEBig(x, y);
+		LCD_E(x, y);
 	}
 	else if( letter == 'F' ) {
-		LCD_DrawFBig(x, y);
+		LCD_F(x, y);
 	}
 	else if( letter == 'G' ) {
-		LCD_DrawGBig(x, y);
+		LCD_G(x, y);
 	}
 	else if( letter == 'H' ) {
-		LCD_DrawHBig(x, y);
+		LCD_H(x, y);
 	}
 	else if( letter == 'I' ) {
-		LCD_DrawIBig(x, y);
+		LCD_I(x, y);
 	}
 	else if( letter == 'J' ) {
-		LCD_DrawJBig(x, y);
+		LCD_J(x, y);
 	}
 	else if( letter == 'K' ) {
-		LCD_DrawKBig(x, y);
+		LCD_K(x, y);
 	}
 	else if( letter == 'L' ) {
-		LCD_DrawLBig(x, y);
+		LCD_L(x, y);
 	}
 	else if( letter == 'M' ) {
-		LCD_DrawMBig(x, y);
+		LCD_M(x, y);
 	}
 	else if( letter == 'N' ) {
-		LCD_DrawNBig(x, y);
+		LCD_N(x, y);
 	}
 	else if( letter == 'O' ) {
-		LCD_DrawOBig(x, y);
+		LCD_O(x, y);
 	}
 	else if( letter == 'P' ) {
-		LCD_DrawPBig(x, y);
+		LCD_P(x, y);
 	}
 	else if( letter == 'Q' ) {
-		LCD_DrawQBig(x, y);
+		LCD_Q(x, y);
 	}
 	else if( letter == 'R' ) {
-		LCD_DrawRBig(x, y);
+		LCD_R(x, y);
 	}
 	else if( letter == 'S' ) {
-		LCD_DrawSBig(x, y);
+		LCD_S(x, y);
 	}
 	else if( letter == 'T' ) {
-		LCD_DrawTBig(x, y);
+		LCD_T(x, y);
 	}
 	else if( letter == 'U' ) {
-		LCD_DrawUBig(x, y);
+		LCD_U(x, y);
 	}
 	else if( letter == 'V' ) {
-		LCD_DrawVBig(x, y);
+		LCD_V(x, y);
 	}
 	else if( letter == 'W' ) {
-		LCD_DrawWBig(x, y);
+		LCD_W(x, y);
 	}
 	else if( letter == 'X' ) {
-		LCD_DrawXBig(x, y);
+		LCD_X(x, y);
 	}
 	else if( letter == 'Y' ) {
-		LCD_DrawYBig(x, y);
+		LCD_Y(x, y);
 	}
 	else if( letter == 'Z') {
-		LCD_DrawZBig(x, y);
+		LCD_Z(x, y);
 	}
 	else if( letter == '0' ) {
-		LCD_Draw0Big(x, y);
+		LCD_0(x, y);
 	}
 	else if( letter == '1' ) {
-		LCD_Draw1Big(x, y);
+		LCD_1(x, y);
 	}
 	else if( letter == '2' ) {
-		LCD_Draw2Big(x, y);
+		LCD_2(x, y);
 	}
 	else if( letter == '3' ) {
-		LCD_Draw3Big(x, y);
+		LCD_3(x, y);
 	}
 	else if( letter == '4' ) {
-		LCD_Draw4Big(x, y);
+		LCD_4(x, y);
 	}
 	else if( letter == '5') {
-		LCD_Draw5Big(x, y);
+		LCD_5(x, y);
 	}
 	else if( letter == '6' ) {
-		LCD_Draw6Big(x, y);
+		LCD_6(x, y);
 	}
 	else if( letter == '7' ) {
-		LCD_Draw7Big(x, y);
+		LCD_7(x, y);
 	}
 	else if( letter == '8' ) {
-		LCD_Draw8Big(x, y);
+		LCD_8(x, y);
 	}
 	else if( letter == '9') {
-		LCD_Draw9Big(x, y);
+		LCD_9(x, y);
+	}
+	else if ( letter == '.'){
+		LCD_Period(x,y);
+	}
+	else if ( letter == ':'){
+		LCD_Colon(x, y);
 	}
 	else if( letter == ' ') {
 	}
@@ -151,29 +157,43 @@ void InitialScreen(void)
 
 void MenuScreen(void)
 {
-	LCD_ClearScreenLtdc(0x04);
-	type("MENU LALILULELO", 70, 152);
-	type("PAMA LALILULELO" , 85, 294);
+	LCD_ClearScreenLtdc(0x05);
+	type("MENU", 70, 152);
+	type("PAMA" , 85, 294);
 }
 
 void BluetoothScreen(void)
 {
-	LCD_ClearScreenLtdc(0x12);
-	type("BLUETOOTH", 40, 152);
-	type("PAIRING", 40, 170);
+	LCD_ClearScreenLtdc(0x05);
+	type("BLUETOOTH", 40, 50);
+	type("PAIRING", 40, 68);
+	//DEMONSTRATION PURPOSES
+	type("PAIRING...", 20, 152);
 	type("PAMA" , 85, 294);
 }
 
 void ScheduleScreen()
 {
 	LCD_ClearScreenLtdc(0x05);
-	type("SCHEDULE", 50, 152);
+	type("SCHEDULE", 30, 50);
+	//DEMONSTRATION PURPOSES
+	type("TYLENOL", 10, 100);
+	type("2:30 2", 10, 118);
+	type("SIMVASTATIN", 10, 154);
+	type("3:00 1", 10, 172);
+	type("AZITHROMYCIN", 10, 208);
+	type("3:30 1", 10, 226);
 	type("PAMA", 85, 294);
 }
 
 void DispensedScreen()
 {
-	LCD_ClearScreenLtdc(0x09);
-	type("DISPENSED", 50, 152);
+	LCD_ClearScreenLtdc(0x05);
+	type("DISPENSE", 50, 50);
+	//DEMONSTRATION PURPOSES
+	type("PREPARING:", 25, 100);
+	type("TYLENOL", 10, 118);
+	type("SIMVASTATIN", 10, 136);
+	type("AZITHROMYCIN", 10, 154);
 	type("PAMA" , 85, 294);
 }

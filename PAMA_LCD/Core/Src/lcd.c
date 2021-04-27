@@ -38,6 +38,7 @@ void LCD_GpioInit() {
 	HAL_GPIO_WritePin(LCD_DCX_GPIO, LCD_DCX_PIN, GPIO_PIN_SET);
 }
 
+
 void LCD_LtdcInit() {
 	MX_LTDC_Init();
 	HAL_LTDC_SetAddress(&hltdc, (uint32_t)GRAM, LTDC_LAYER_1);
@@ -373,3 +374,15 @@ void LCD_WriteGRAM(uint8_t data, uint32_t addr) {
 void LCD_ClearScreenLtdc(uint8_t c) {
 	memset(GRAM, c, LCD_WIDTH * LCD_HEIGHT);
 }
+
+void LCD_ClearChar(uint16_t x0, uint16_t y0) {
+	const uint8_t width = 15;
+	for(int dy = 0; dy <= width; dy++){
+		for(int dx = 0; dx <=width; dx++){
+			int y = y0 + dy;
+			int x = x0 + dx;
+			LCD_WriteGRAM(0x05, y * LCD_WIDTH + x);
+		}
+	}
+}
+

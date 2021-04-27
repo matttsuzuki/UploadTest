@@ -54,22 +54,8 @@ void LCD_DrawRect_Ltdc(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1) {
 	}
 }
 
-void LCD_DrawH(uint16_t x0, uint16_t y0) {
-	const uint8_t width = 8;
-	for(int dy = 0; dy <= width; dy++){
-			for(int dx = 0; dx <= width; dx++) {
-				if ((dx < 2 || dx >= 7) || (dy == 3 || dy == 4)) {
-					int y = y0 + dy;
-					int x = x0 + dx;
-					LCD_WriteGRAM(COLOR_LTDC, y * LCD_WIDTH + x);
-				}
-			}
-		}
-}
-
-
 //Matthew's Addition
-void LCD_DrawABig(uint16_t x0, uint16_t y0) {
+void LCD_A(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -82,7 +68,7 @@ void LCD_DrawABig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawBBig(uint16_t x0, uint16_t y0) {
+void LCD_B(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -95,7 +81,7 @@ void LCD_DrawBBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawCBig(uint16_t x0, uint16_t y0) {
+void LCD_C(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -108,7 +94,7 @@ void LCD_DrawCBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawDBig(uint16_t x0, uint16_t y0) {
+void LCD_D(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -121,7 +107,7 @@ void LCD_DrawDBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawEBig(uint16_t x0, uint16_t y0) {
+void LCD_E(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -134,7 +120,7 @@ void LCD_DrawEBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawFBig(uint16_t x0, uint16_t y0) {
+void LCD_F(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -147,7 +133,7 @@ void LCD_DrawFBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawGBig(uint16_t x0, uint16_t y0) {
+void LCD_G(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -160,7 +146,7 @@ void LCD_DrawGBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawHBig(uint16_t x0, uint16_t y0) {
+void LCD_H(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -173,7 +159,7 @@ void LCD_DrawHBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawIBig(uint16_t x0, uint16_t y0) {
+void LCD_I(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -186,7 +172,7 @@ void LCD_DrawIBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawJBig(uint16_t x0, uint16_t y0) {
+void LCD_J(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -199,7 +185,7 @@ void LCD_DrawJBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawKBig(uint16_t x0, uint16_t y0) {
+void LCD_K(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -212,7 +198,7 @@ void LCD_DrawKBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawLBig(uint16_t x0, uint16_t y0) {
+void LCD_L(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -225,7 +211,7 @@ void LCD_DrawLBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawMBig(uint16_t x0, uint16_t y0) {
+void LCD_M(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -238,7 +224,7 @@ void LCD_DrawMBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawNBig(uint16_t x0, uint16_t y0) {
+void LCD_N(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -251,7 +237,7 @@ void LCD_DrawNBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawOBig(uint16_t x0, uint16_t y0) {
+void LCD_O(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -264,7 +250,7 @@ void LCD_DrawOBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawPBig(uint16_t x0, uint16_t y0) {
+void LCD_P(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -277,7 +263,7 @@ void LCD_DrawPBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawQBig(uint16_t x0, uint16_t y0) {
+void LCD_Q(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -290,7 +276,7 @@ void LCD_DrawQBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawRBig(uint16_t x0, uint16_t y0) {
+void LCD_R(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -303,7 +289,7 @@ void LCD_DrawRBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawSBig(uint16_t x0, uint16_t y0) {
+void LCD_S(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -316,7 +302,7 @@ void LCD_DrawSBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawTBig(uint16_t x0, uint16_t y0) {
+void LCD_T(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -329,7 +315,7 @@ void LCD_DrawTBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawUBig(uint16_t x0, uint16_t y0) {
+void LCD_U(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -342,7 +328,7 @@ void LCD_DrawUBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawVBig(uint16_t x0, uint16_t y0) {
+void LCD_V(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -355,7 +341,7 @@ void LCD_DrawVBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawWBig(uint16_t x0, uint16_t y0) {
+void LCD_W(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -368,7 +354,7 @@ void LCD_DrawWBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawXBig(uint16_t x0, uint16_t y0) {
+void LCD_X(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -381,7 +367,7 @@ void LCD_DrawXBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawYBig(uint16_t x0, uint16_t y0) {
+void LCD_Y(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -394,7 +380,7 @@ void LCD_DrawYBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_DrawZBig(uint16_t x0, uint16_t y0) {
+void LCD_Z(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -407,7 +393,7 @@ void LCD_DrawZBig(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_Draw0Big(uint16_t x0, uint16_t y0) {
+void LCD_0(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -420,7 +406,7 @@ void LCD_Draw0Big(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_Draw1Big(uint16_t x0, uint16_t y0) {
+void LCD_1(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -433,7 +419,7 @@ void LCD_Draw1Big(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_Draw2Big(uint16_t x0, uint16_t y0) {
+void LCD_2(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -446,7 +432,7 @@ void LCD_Draw2Big(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_Draw3Big(uint16_t x0, uint16_t y0) {
+void LCD_3(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -459,7 +445,7 @@ void LCD_Draw3Big(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_Draw4Big(uint16_t x0, uint16_t y0) {
+void LCD_4(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -472,7 +458,7 @@ void LCD_Draw4Big(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_Draw5Big(uint16_t x0, uint16_t y0) {
+void LCD_5(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -485,7 +471,7 @@ void LCD_Draw5Big(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_Draw6Big(uint16_t x0, uint16_t y0) {
+void LCD_6(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -498,7 +484,7 @@ void LCD_Draw6Big(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_Draw7Big(uint16_t x0, uint16_t y0) {
+void LCD_7(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -511,7 +497,7 @@ void LCD_Draw7Big(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_Draw8Big(uint16_t x0, uint16_t y0) {
+void LCD_8(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -524,7 +510,7 @@ void LCD_Draw8Big(uint16_t x0, uint16_t y0) {
 	}
 }
 
-void LCD_Draw9Big(uint16_t x0, uint16_t y0) {
+void LCD_9(uint16_t x0, uint16_t y0) {
 	const uint8_t width = 15;
 	for(int dy = 0; dy <= width; dy++){
 		for(int dx = 0; dx <=width; dx++){
@@ -535,4 +521,38 @@ void LCD_Draw9Big(uint16_t x0, uint16_t y0) {
 			}
 		}
 	}
+}
+
+void LCD_Period(uint16_t x0, uint16_t y0) {
+	const uint8_t width = 15;
+	for(int dy = 0; dy <= width; dy++){
+		for(int dx = 0; dx <=width; dx++){
+			if ((dx >= 3 && dx <= 6) && (dy >= 12 && dy <= 15)) {
+				int y = y0 + dy;
+				int x = x0 + dx;
+				LCD_WriteGRAM(COLOR_LTDC, y * LCD_WIDTH + x);
+			}
+		}
+	}
+}
+
+void LCD_Colon(uint16_t x0, uint16_t y0) {
+	const uint8_t width = 15;
+	for(int dy = 0; dy <= width; dy++){
+		for(int dx = 0; dx <=width; dx++){
+			if ((dx >= 6 && dx <= 9) && ((dy >= 3 && dy <= 6)|| (dy >= 10 && dy <= 13))) {
+				int y = y0 + dy;
+				int x = x0 + dx;
+				LCD_WriteGRAM(COLOR_LTDC, y * LCD_WIDTH + x);
+			}
+		}
+	}
+}
+
+void LCD_ClearTime(void){
+  	  LCD_ClearChar(0, 0);
+  	  LCD_ClearChar(18, 0);
+  	  LCD_ClearChar(36, 0);
+  	  LCD_ClearChar(54, 0);
+  	  LCD_ClearChar(72, 0);
 }
